@@ -1,7 +1,5 @@
 package cn.mr8god.ttwenty;
 
-import java.io.IOException;
-
 class UnresponsiveUI{
     private volatile double d = 1;
     public UnresponsiveUI() throws Exception{
