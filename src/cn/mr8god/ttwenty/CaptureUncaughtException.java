@@ -22,8 +22,14 @@ class MyUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler{
         System.out.println("caught " + e);
     }
 }
-
+/**
+ * 为了使用 Thread.UncaughtExceptionHandler.uncaughtException(),
+ * 我们创建了一个新类型的ThreadFactory，它将在每个新创建的Thread对象
+ * 上附着一个 Thread.UncaughtExceptionHandler。
+ * 于是我们将这个工厂传递给 Executors 创建新的 ExecutorService 的方法
+ */
 class HandlerThreadFactory implements ThreadFactory{
+
     @Override
     public Thread newThread(Runnable r){
         System.out.println(this + " creating new Thread");
