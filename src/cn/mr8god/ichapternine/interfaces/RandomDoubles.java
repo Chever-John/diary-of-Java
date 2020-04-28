@@ -1,0 +1,20 @@
+package cn.mr8god.ichapternine.interfaces;
+
+import java.util.Random;
+
+/**
+ * @author Mr8god
+ * @date 2020/4/18
+ * @time 20:36
+ */
+public class RandomDoubles {
+    private static Random rand = new Random(47);
+    public double next() { return rand.nextDouble(); }
+
+    public static void main(String[] args) {
+        RandomDoubles rd = new RandomDoubles();
+        for (int i = 0; i < 7; i++){
+            System.out.print(rd.next() + " ");
+        }
+    }
+}
