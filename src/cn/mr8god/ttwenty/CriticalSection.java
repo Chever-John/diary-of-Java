@@ -43,7 +43,7 @@ abstract class PairManager{
     AtomicInteger checkCounter = new AtomicInteger(0);
     protected Pair p = new Pair();
     private List<Pair> storage = Collections.synchronizedList(new ArrayList<Pair>());
-    public synchronized Pair getPair(){
+    public synchronized Pair getPair(){//make a copy to keep the original safe
         return new Pair(p.getX(), p.getY());
     }
     protected void store(Pair p){
