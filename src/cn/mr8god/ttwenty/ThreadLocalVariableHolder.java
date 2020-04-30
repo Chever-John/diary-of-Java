@@ -20,8 +20,7 @@ class Accessor implements Runnable{
 
     @Override
     public String toString() {
-        return "#" + id + ": " +
-                ThreadLocalVariableHolder.get();
+        return "#" + id + ": " + ThreadLocalVariableHolder.get();
     }
 }
 
