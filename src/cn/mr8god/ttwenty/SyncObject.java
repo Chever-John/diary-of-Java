@@ -28,6 +28,7 @@ class DualSynch{
  * @date 2020/4/30
  * @time 23:50
  */
+
 public class SyncObject {
     public static void main(String[] args) {
         final DualSynch ds = new DualSynch();
