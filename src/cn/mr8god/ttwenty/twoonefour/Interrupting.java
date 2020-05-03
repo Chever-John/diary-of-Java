@@ -85,7 +85,5 @@ public class Interrupting {
         TimeUnit.SECONDS.sleep(3);
         print("Aborting with System.exit(0)");
         System.exit(0);
-
     }
-
 }
