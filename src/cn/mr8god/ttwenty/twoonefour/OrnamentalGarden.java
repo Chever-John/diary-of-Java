@@ -91,3 +91,23 @@ public class OrnamentalGarden {
         print("Sum of Entrances: " + Entrance.sumEntrances());
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
