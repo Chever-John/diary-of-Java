@@ -24,9 +24,21 @@ public class LiftOff implements Runnable {
         }
     }
     public static class Tester{
+//        // 直接运行从Runnable导出的类，因为这个类具有run()方法
+//        // 所以可以使用类来运行，但是它不会产生任何内在的线程能力
+//        // 要实现线程行为，你必须显式地将一个任务附着到线程上
+//        public static void main(String[] args) {
+//            LiftOff lift = new LiftOff();
+//            lift.run();
+//        }
+
+        // 虽然效果是一样的，但是呢原理是不同的
+        // 将Runnable对象转变为工作任务的传统方式是把它提交给一个Thread构造器
+        // 然后使用Thread来驱动LiftOff对象。
         public static void main(String[] args) {
-            LiftOff lift = new LiftOff();
-            lift.run();
+            Thread t = new Thread(new LiftOff());
+            t.start();
+            System.out.println("看看会有啥效果呢");
         }
     }
 }
