@@ -14,20 +14,19 @@ public class LiftOff implements Runnable {
         this.countDown = countDown;
     }
     public String status(){
-        return "#" + id +"(" +
-                (countDown > 0 ? countDown : "LiftOff!") + "), ";
+        return "#" + id +"(" + (countDown > 0 ? countDown : "LiftOff!") + "), ";
     }
     @Override
     public void run(){
         while (countDown-- > 0){
-            System.out.print(status());
+            System.out.println(status());
             Thread.yield();
         }
     }
-//    public static class Tester{
-//        public static void main(String[] args) {
-//            LiftOff lift = new LiftOff();
-//            lift.run();
-//        }
-//    }
+    public static class Tester{
+        public static void main(String[] args) {
+            LiftOff lift = new LiftOff();
+            lift.run();
+        }
+    }
 }

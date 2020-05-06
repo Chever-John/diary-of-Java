@@ -24,9 +24,13 @@ public class CloseResource {
         TimeUnit.MILLISECONDS.sleep(100);
         print("Shutting down all threads");
         exec.shutdownNow();
+
+        // block sockerInput
         TimeUnit.SECONDS.sleep(1);
         print("Closing " + sockerInput.getClass().getName());
         sockerInput.close();
+
+        // block System.in
         TimeUnit.SECONDS.sleep(1);
         print("Closing " + System.in.getClass().getName());
         System.in.close();
