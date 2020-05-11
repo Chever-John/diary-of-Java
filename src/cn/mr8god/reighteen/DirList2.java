@@ -12,8 +12,10 @@ import java.util.regex.Pattern;
  */
 public class DirList2 {
     public static FilenameFilter filter(final String regex){
+        //首先创建一个filter()方法，它会返回一个指向FilenameFilter的引用
         return new FilenameFilter() {
             private Pattern pattern = Pattern.compile(regex);
+
             @Override
             public boolean accept(File dir, String name) {
                 return pattern.matcher(name).matches();
