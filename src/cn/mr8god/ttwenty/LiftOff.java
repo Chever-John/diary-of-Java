@@ -40,5 +40,9 @@ public class LiftOff implements Runnable {
             t.start();
             System.out.println("看看会有啥效果呢");
         }
+        // 有一个小细节需要注意，
+        // 我们可以看到“看看会有啥效果”会第一个出现在最开始，在我们的start方法之前先发生了
+        // 其实是因为LiftOff.run()是有不同的线程执行的，因此你仍旧可以执行main()线程中的其他操作
+        
     }
 }
