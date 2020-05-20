@@ -73,7 +73,7 @@ class WaxOff implements Runnable {
                 car.buffed();
             }
         } catch (InterruptedException e) {
-            print("Exiting via interrupt");
+            print("Exiting via interrupt123");
         }
         print("Ending Wax Off task");
     }
@@ -89,7 +89,7 @@ public class WaxOMatic {
         ExecutorService exec = Executors.newCachedThreadPool();
         exec.execute(new WaxOff(car));
         exec.execute(new WaxOn(car));
-        TimeUnit.SECONDS.sleep(5);
-        exec.shutdownNow();
+        TimeUnit.SECONDS.sleep(5);// Run for a while......
+        exec.shutdownNow();// Interrupt all tasks
     }
 }
